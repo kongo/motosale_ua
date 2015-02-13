@@ -61,4 +61,19 @@ describe MotosaleUa::Scraper do
 
     end
   end
+
+  describe "#fetch_item_photos_urls" do
+    it "parses photos page" do
+      Net::HTTP.stub(:get).and_return File.read("./spec/assets/gall.html").force_encoding("WINDOWS-1251")
+
+      MotosaleUa::Scraper.new.fetch_item_photos_urls(375756).should == [
+        "http://www.motosale.com.ua/big/mhe9t5nugprky5n4ufd7.jpg",
+        "http://www.motosale.com.ua/big/zsz7mbkhageknde4thae.jpg"
+        "http://www.motosale.com.ua/big/7tkpcsenak2v4sa63f6w.jpg"
+        "http://www.motosale.com.ua/big/h5s7cdzqh9udh6hmk4ve.jpg"
+        "http://www.motosale.com.ua/big/u9mccsaat9gfghhtrrpd.jpg"
+      ]
+    end
+  end
+
 end
