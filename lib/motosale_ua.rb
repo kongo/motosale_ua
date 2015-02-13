@@ -58,13 +58,23 @@ module MotosaleUa
     def fetch_item_details(link)
       page = Net::HTTP.get ENDPOINT, link
       doc  = Nokogiri::HTML page
-      e    = doc.xpath '//body/table[1]/tr[2]/td[1]/table[1]/tr[1]/td[3]/table[1]/tr[1]/td[1]/div[3]/div[3]/table[1]'
+      e    = doc.xpath '//body/table[1]/tr[2]/td[1]/table[1]/tr[1]/td[3]/table[1]/tr[1]/td[1]/div[4]/div[2]/table[1]'
       {
-        mileage:      e.xpath('//tr[10]/td[2]').children.first.content.strip,
-        displacement: e.xpath('//tr[12]/td[2]').children.first.content.strip,
-        message:      e.xpath('//tr[14]/td[2]').children.reject {|r| r.attributes['id'].value == 'anti_parser' rescue false }.map(&:content).join(''),
-        author_name:  e.xpath('//tr[16]/td[2]').children[0].content,
-        phone:        e.xpath('//tr[16]/td[2]').children[3].content.strip,
+        link:           link,
+        make:           e.xpath('//tr[7]/td[2]').children.first.content.strip.split(' - ', 2).first,
+        model_name:     e.xpath('//tr[7]/td[2]').children.first.content.strip.split(' - ', 2).last,
+        topic:          e.xpath('//tr[6]/td[2]').children.first.content.strip,
+        motorcycle:     e.xpath('//tr[7]/td[2]').children.first.content.strip,
+        vehicle_type:   e.xpath('//tr[8]/td[2]').children.first.content.strip,
+        papers:         e.xpath('//tr[9]/td[2]').children.last.content,
+        mileage:        e.xpath('//tr[10]/td[2]').children.first.content.strip,
+        year_built:     e.xpath('//tr[11]/td[2]').children.first.content.strip,
+        displacement:   e.xpath('//tr[12]/td[2]').children.first.content.strip,
+        place:          e.xpath('//tr[15]/td[2]').children.first.content.strip,
+        message:        e.xpath('//tr[16]/td[2]').children.reject {|r| r.attributes['id'].value == 'anti_parser' rescue false }.map(&:content).join('').strip,
+        price:          e.xpath('//tr[17]/td[2]').children.first.content.strip,
+        phone:          e.xpath('//tr[18]/td[2]').children.last.content.strip,
+        date_published: e.xpath('//tr[19]/td[1]/font[2]').first.content
       }
     end
 
