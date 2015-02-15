@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = MotosaleUa::VERSION
   spec.authors       = ["kongo"]
   spec.email         = ["d.parshenko@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.description   = %q{Access motosale.ua from ruby code}
+  spec.summary       = spec.description
   spec.homepage      = ""
   spec.license       = "MIT"
 
