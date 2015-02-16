@@ -1,4 +1,4 @@
-# MotosaleUa
+# MotosaleUa [![Build Status](https://travis-ci.org/kongo/motosale_ua.svg?branch=master)](https://travis-ci.org/kongo/motosale_ua)
 
 TODO: Write a gem description
 
