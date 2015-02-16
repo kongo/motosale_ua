@@ -68,9 +68,9 @@ describe MotosaleUa::Scraper do
 
       MotosaleUa::Scraper.new.fetch_item_photos_urls(375756).should == [
         "http://www.motosale.com.ua/big/mhe9t5nugprky5n4ufd7.jpg",
-        "http://www.motosale.com.ua/big/zsz7mbkhageknde4thae.jpg"
-        "http://www.motosale.com.ua/big/7tkpcsenak2v4sa63f6w.jpg"
-        "http://www.motosale.com.ua/big/h5s7cdzqh9udh6hmk4ve.jpg"
+        "http://www.motosale.com.ua/big/zsz7mbkhageknde4thae.jpg",
+        "http://www.motosale.com.ua/big/7tkpcsenak2v4sa63f6w.jpg",
+        "http://www.motosale.com.ua/big/h5s7cdzqh9udh6hmk4ve.jpg",
         "http://www.motosale.com.ua/big/u9mccsaat9gfghhtrrpd.jpg"
       ]
     end
