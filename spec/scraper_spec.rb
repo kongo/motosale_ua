@@ -17,21 +17,7 @@ describe MotosaleUa::Scraper do
 
       list = m.fetch_list nil
 
-      list.count.should == 10
-
-      list.first.should == {
-        :make               => "YAMAHA",
-        :model_name         => "XVS 950 A Midnight Star",
-        :mileage            => "15000",
-        :year_built         => "2010",
-        :papers             => "Стоит на укр.учете",
-        :link               => "yamaha/XVS_950_A_Midnight_Star_375006.html",
-        :price              => "10500 $",
-        :location           => "Одесса",
-        :uin                => 375006,
-        :date_published     => "07.02.2015",
-        :ms_photo_file_name => "k4hcftndsmvdvwh69apg.jpg"
-      }
+      list.first.should == {:make=>"HONDA", :model_name=>"XR 250 R", :mileage=>"28700", :year_built=>"2001", :papers=>"Стоит на укр.учете", :link=>"honda/XR_250_R_376461.html", :price=>"3050 $", :location=>"Днепропетровск", :uin=>376461, :date_published=>"19.02.2015", :ms_photo_file_name=>"aeuwfccnpm9uqdvqsxrn.jpg"}
     end
   end
 

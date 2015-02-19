@@ -1,6 +1,6 @@
 require "motosale_ua/version"
-require "nokogiri"
 require "motosale_ua/string_extensions"
+require "nokogiri"
 
 module MotosaleUa
 
@@ -33,7 +33,7 @@ module MotosaleUa
 
     def fetch_list(page_num, vehicle_type_index = :all)
       doc = Nokogiri::HTML fetch_list_page_body(page_num, vehicle_type_index)
-      items = doc.xpath('//body/table[1]/tr[2]/td[1]/table[1]/tr[1]/td[3]/table[1]/tr[1]/td[1]/div[4]/div[not(@id) and not(@class)]')
+      items = doc.xpath('//body/table[1]/tr[2]/td[1]/table[1]/tr[1]/td[3]/table[1]/tr[1]/td[1]/div[3]/div[not(@id) and not(@class)]')
 
       items.map do |item|
         brand_model = item.xpath("div[2]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tr[3]/td/span/strong").first.content.strip
