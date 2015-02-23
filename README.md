@@ -1,6 +1,6 @@
 # MotosaleUa [![Build Status](https://travis-ci.org/kongo/motosale_ua.svg?branch=master)](https://travis-ci.org/kongo/motosale_ua)
 
-TODO: Write a gem description
+Access [motosale.ua](http://motosale.ua) motorcycle ads website from Ruby.
 
 ## Installation
 
@@ -20,7 +20,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+All the stuff is performed by `MotosaleUa::Scraper` class.
+
+### Getting a collection of ads
+
+      MotosaleUa::Scraper.new.fetch_list(page_num, vehicle_type_index)
+`page_num` - put `nil` to fetch the entire list, or number > 1 for a specific page. One page contains 10 ads.
+`vehicle_type_index` - select one from the following list
+    :classic, :neoclassic, :chopper, :sport, :sporttourist, :tourist, :enduro, :cross, :pitbike, :supermoto, :trial, :scooter, :maxiscooter, :custom, :trike, :quadracycle, :watercraft, :snowmobile, :all
+Default is `:all`.
+
+### Getting details of a specific item
+
+      fetch_item_details(link)
+
+### Getting all photos of a specific item
+
+      fetch_item_photos_urls(uin)
+
 
 ## Contributing
 
