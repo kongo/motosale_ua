@@ -25,7 +25,9 @@ All the stuff is performed by `MotosaleUa::Scraper` class.
 ### Getting a collection of ads
 
       MotosaleUa::Scraper.new.fetch_list(page_num, vehicle_type_index)
+
 `page_num` - put `nil` to fetch the entire list, or number > 1 for a specific page. One page contains 10 ads.
+
 `vehicle_type_index` - select one from the following list
 
     :classic, :neoclassic, :chopper, :sport, :sporttourist, :tourist, :enduro, :cross, :pitbike, :supermoto, :trial, :scooter, :maxiscooter, :custom, :trike, :quadracycle, :watercraft, :snowmobile, :all
