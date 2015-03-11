@@ -17,7 +17,7 @@ describe MotosaleUa::Scraper do
 
       list = m.fetch_list nil
 
-      list.first.should == {:make=>"HONDA", :model_name=>"XR 250 R", :mileage=>"28700", :year_built=>"2001", :papers=>"Стоит на укр.учете", :link=>"honda/XR_250_R_376461.html", :price=>"3050 $", :location=>"Днепропетровск", :uin=>376461, :date_published=>"19.02.2015", :ms_photo_file_name=>"aeuwfccnpm9uqdvqsxrn.jpg"}
+      list.first.should == {:make=>"KTM", :model_name=>"EXC 530", :mileage=>"5500", :year_built=>"2008", :papers=>"Модель не для дорог общего пользования", :link=>"ktm/EXC_530_379168.html", :price=>"2900 $", :location=>"Львов", :uin=>379168, :date_published=>"11.03.2015", :ms_photo_file_name=>"zu2nzbdgf9gue6mkdapb.jpg"}
     end
   end
 
